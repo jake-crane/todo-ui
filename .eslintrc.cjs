@@ -12,10 +12,11 @@ module.exports = {
   rules: {
     'react-refresh/only-export-components': 'warn',
     'react/react-in-jsx-scope': 'off',
+    "semi": [1, "always"]
   },
   settings: {
     react: {
       version: 'detect'
     }
   }
-}
+};
