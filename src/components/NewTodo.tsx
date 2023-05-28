@@ -1,10 +1,10 @@
+import Button from '@mui/material/Button';
+import Checkbox from '@mui/material/Checkbox';
+import CircularProgress from '@mui/material/CircularProgress';
+import Stack from '@mui/material/Stack';
+import TextField from '@mui/material/TextField';
 import { useState } from 'react';
 import { useTodoCreateMutation } from '../hooks/useTodoCreateMutation';
-import Stack from '@mui/material/Stack';
-import Button from '@mui/material/Button';
-import CircularProgress from '@mui/material/CircularProgress';
-import Checkbox from '@mui/material/Checkbox';
-import TextField from '@mui/material/TextField';
 
 const NewTodo = (): JSX.Element => {
     const { mutate, isLoading } = useTodoCreateMutation();
@@ -34,13 +34,14 @@ const NewTodo = (): JSX.Element => {
                     checked={completedIsChecked}
                     onChange={e => setCompletedIsChecked(e.target.checked)}
                     disabled={isLoading}
+                    inputProps={{ 'aria-label': 'Done' }}
                 />
                 <TextField
                     variant="standard"
                     value={inputDescription}
                     onChange={e => setInputDescription(e.target.value)}
                     disabled={isLoading}
-                    aria-label="Todo Description"
+                    inputProps={{ 'aria-label': 'Todo Description' }}
                 />
                 <Button
                     type="button"

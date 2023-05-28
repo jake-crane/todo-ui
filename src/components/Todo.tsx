@@ -1,12 +1,12 @@
+import Button from '@mui/material/Button';
+import Checkbox from '@mui/material/Checkbox';
+import CircularProgress from '@mui/material/CircularProgress';
+import Stack from '@mui/material/Stack';
+import TextField from '@mui/material/TextField';
 import { useState } from 'react';
 import { useTodoDeleteMutation } from '../hooks/useTodoDeleteMutation';
-import type { Todo as TodoType } from '../schemas/todoSchema';
 import { useTodoUpdateMutation } from '../hooks/useTodoUpdateMutation';
-import Button from '@mui/material/Button';
-import Stack from '@mui/material/Stack';
-import CircularProgress from '@mui/material/CircularProgress';
-import TextField from '@mui/material/TextField';
-import Checkbox from '@mui/material/Checkbox';
+import type { Todo as TodoType } from '../schemas/todoSchema';
 
 interface ComponentProps {
     todo: TodoType;
@@ -37,13 +37,14 @@ const Todo = ({ todo }: ComponentProps): JSX.Element => {
                     checked={completedIsChecked}
                     onChange={e => setCompletedIsChecked(e.target.checked)}
                     disabled={isLoading}
+                    inputProps={{ 'aria-label': 'Done' }}
                 />
                 <TextField
                     variant="standard"
                     value={inputDescription}
                     onChange={e => setInputDescription(e.target.value)}
                     disabled={isLoading}
-                    aria-label="Todo Description"
+                    inputProps={{ 'aria-label': 'Todo Description' }}
                 />
                 <Button
                     type="button"
