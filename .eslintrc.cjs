@@ -17,10 +17,12 @@ module.exports = {
     'react/button-has-type': ['warn'],
     'react/jsx-first-prop-new-line': ['warn'],
     'react/jsx-max-props-per-line': ['warn', { 'maximum': 1, 'when': 'multiline' }],
+    'react/jsx-closing-bracket-location': ['warn'],
     'semi': [1, 'always'],
     'quotes': [1, 'single'],
     'comma-dangle': ['warn', 'never'],
-    '@typescript-eslint/consistent-type-imports': ['warn', { prefer: 'type-imports' }]
+    '@typescript-eslint/consistent-type-imports': ['warn', { prefer: 'type-imports' }],
+    'jsx-quotes': ['warn']
   },
   settings: {
     react: {

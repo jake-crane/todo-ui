@@ -2,6 +2,7 @@ import './App.css';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import Todos from './components/Todos';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
+import Container from '@mui/material/Container';
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -14,8 +15,10 @@ const queryClient = new QueryClient({
 const App = (): JSX.Element => {
   return (
     <QueryClientProvider client={queryClient}>
-      <h1>Todos</h1>
-      <Todos />
+      <Container>
+        <h1>Todos</h1>
+        <Todos />
+      </Container>
       <ReactQueryDevtools />
     </QueryClientProvider>
   );
